@@ -1,6 +1,14 @@
+// React
 import React, { Component } from 'react';
+
+// Styles
 import './App.css';
+
+// Utils
 import NumberConverter from '../../utils/NumberConverter';
+
+// Form Components
+import Input from '../form/input/input-view';
 
 class App extends Component {
 
@@ -10,6 +18,7 @@ class App extends Component {
       binaryNumber: '',
       decimalNumber: ''
     }
+    this.handleBinaryNumberChange = this.handleBinaryNumberChange.bind(this);
   }
 
   handleBinaryNumberChange($event) {
@@ -20,21 +29,23 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App">
-        <label htmlFor="binaryNumber">Enter binary number</label>
-        <br />
-        <input 
+        <Input 
           id="binaryNumber" 
+          name="binaryNumber"
+          title="Enter binary number"
           value={this.state.binaryNumber}
-          onChange={($event) => this.handleBinaryNumberChange($event)} />
+          handleChange={this.handleBinaryNumberChange} />
         <br />
-        <label htmlFor="decimalNumber">Decimal Number</label>
-        <br />
-        <input 
+        <Input 
           id="decimalNumber" 
+          name="decimalNumber"
+          title="Decimal Number"
           value={this.state.decimalNumber}
           readOnly />
+   
       </div>
     );
   }
