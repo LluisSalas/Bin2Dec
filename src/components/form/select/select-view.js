@@ -2,7 +2,7 @@ import React from 'react';
 import '../form.css';
 import './select.css';
 
-const Select = (handleChange, name, title, options, ...props) => {
+const Select = ({ handleChange, name, title, options, ...props }) => {
 
     return (
         <div className="form-group">

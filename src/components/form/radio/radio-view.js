@@ -2,7 +2,7 @@ import React from 'react';
 import '../form.css';
 import './radio.css';
 
-const Radio = (handleChange, name, title, options, ...props) => {
+const Radio = ({ handleChange, name, title, options, ...props }) => {
 
     return (
         <div className="form-group">
