@@ -5,10 +5,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 // Utils
-import NumberConverter from '../../utils/NumberConverter';
+import NumberConverter from '../utils/NumberConverter';
 
 // Form Components
-import Input from '../form/input/input-view';
+import { Input } from '../components/UI/input/input';
 
 class App extends Component {
 
