@@ -1,8 +1,8 @@
 import React from 'react';
-import '../form.css';
-import './input.css';
 
-const Input = ( { 
+import './Input.css';
+
+export const Input = ( { 
   handleChange, 
   name, 
   title,
@@ -27,5 +27,3 @@ const Input = ( {
       </div>
     );
 }
-
-export default Input;
