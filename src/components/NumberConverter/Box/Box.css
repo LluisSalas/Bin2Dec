@@ -1,0 +1,12 @@
+.NumberConverterBox {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  border-top: 8px solid rgb(48, 5, 73);
+  text-align: center;
+  -webkit-box-shadow: 3px 4px 6px 0px rgba(82,82,82,1);
+  -moz-box-shadow: 3px 4px 6px 0px rgba(82,82,82,1);
+  box-shadow: 3px 4px 6px 0px rgba(82,82,82,1);
+}

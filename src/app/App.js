@@ -1,14 +1,11 @@
 // React
 import React, { Component } from 'react';
 
-// Styles
-import './App.css';
-
 // Utils
 import NumberConverter from '../utils/NumberConverter';
 
-// Form Components
-import { Input } from '../components/UI/input/input';
+// Screens
+import { ScreenNumberConverter } from '../screens/NumberConverter/NumberConverter';
 
 class App extends Component {
 
@@ -29,8 +26,10 @@ class App extends Component {
   }
 
   render() {
-
     return (
+      <ScreenNumberConverter />
+    )
+    /*return (
       <div className="App">
         <Input 
           id="binaryNumber" 
@@ -47,7 +46,7 @@ class App extends Component {
           readOnly />
    
       </div>
-    );
+    );*/
   }
 
 }
