@@ -1,14 +1,15 @@
-// React
 import React, { Component } from 'react';
 
+// Styles
+import './Form.css';
+
+// Components
+import { Input } from '../../UI/Input/Input';
+
 // Utils
-import NumberConverter from '../utils/NumberConverter';
+import NumberConverter from '../../../utils/NumberConverter';
 
-// Screens
-import { ScreenNumberConverter } from '../screens/NumberConverter/NumberConverter';
-
-class App extends Component {
-
+export class NumberConverterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,12 +26,9 @@ class App extends Component {
     });
   }
 
-  render() {
+  render () {
     return (
-      <ScreenNumberConverter />
-    )
-    /*return (
-      <div className="App">
+      <div className="NumberConverterForm">
         <Input 
           id="binaryNumber" 
           name="binaryNumber"
@@ -44,11 +42,7 @@ class App extends Component {
           title="Decimal Number"
           value={this.state.decimalNumber}
           readOnly />
-   
       </div>
-    );*/
+    );        
   }
-
 }
-
-export default App;

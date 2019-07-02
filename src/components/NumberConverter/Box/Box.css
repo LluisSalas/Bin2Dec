@@ -9,4 +9,5 @@
   -webkit-box-shadow: 3px 4px 6px 0px rgba(82,82,82,1);
   -moz-box-shadow: 3px 4px 6px 0px rgba(82,82,82,1);
   box-shadow: 3px 4px 6px 0px rgba(82,82,82,1);
+  padding: 10px;
 }
