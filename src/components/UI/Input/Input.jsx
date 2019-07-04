@@ -6,8 +6,16 @@ export const Input = ( {
   handleChange, 
   name, 
   title,
+  valid,
+  touched,
    ...props 
   }) => {
+    const formControlClassName = ['form-control'];
+
+    if (touched && !valid) {
+      formControlClassName.push('control-error');
+    }
+
     return (
       <div className="form-group">
 
@@ -20,7 +28,7 @@ export const Input = ( {
         <input 
           type="text" 
           name={name}
-          className="form-control" 
+          className={formControlClassName.join(' ')} 
           onChange={handleChange}
           {...props} />
       
