@@ -7,7 +7,8 @@ import './Form.css';
 import { Input } from '../../UI/Input/Input';
 
 // Utils
-import NumberConverter from '../../../utils/NumberConverter';
+import { NumberConverter } from '../../../utils/NumberConverter';
+import { Validation } from '../../../utils/Validation';
 
 export class NumberConverterForm extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export class NumberConverterForm extends Component {
           valid: true,
           touched: false,
           validationRules: {
-            binary: true
+            binaryNumber: true
           }
         },
         decimalNumber: {
@@ -49,7 +50,7 @@ export class NumberConverterForm extends Component {
     };
     updatedFormElement.value = value;
     updatedFormElement.touched = true;
-    // updatedFormElement.valid = validate(value, updatedFormElement.validationRules);
+    updatedFormElement.valid = Validation.validateField(value, updatedFormElement.validationRules);
 
     updatedControls[name] = updatedFormElement;
 
@@ -68,12 +69,14 @@ export class NumberConverterForm extends Component {
 
   render () {
     return (
-      <div className="NumberConverterForm">
+      <form className="NumberConverterForm">
         <Input 
           id={this.state.formControls.binaryNumber.id}
           name={this.state.formControls.binaryNumber.name}
           title={this.state.formControls.binaryNumber.title}
           value={this.state.formControls.binaryNumber.value}
+          touched={this.state.formControls.binaryNumber.touched}
+          valid={this.state.formControls.binaryNumber.valid}
           handleChange={this.changeHanndler} />
         <br />
         <Input 
@@ -82,7 +85,7 @@ export class NumberConverterForm extends Component {
           title={this.state.formControls.decimalNumber.title}
           value={this.state.formControls.decimalNumber.value}
           readOnly />
-      </div>
+      </form>
     );        
   }
 }
