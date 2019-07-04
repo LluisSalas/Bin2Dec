@@ -1,5 +1,10 @@
+// React
 import React from 'react';
 
+// Proptypes
+import PropTypes from 'prop-types';
+
+// Styles
 import './Input.css';
 
 export const Input = ( { 
@@ -35,3 +40,17 @@ export const Input = ( {
       </div>
     );
 }
+
+Input.propTypes = {
+  handleChange: PropTypes.func,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  valid: PropTypes.bool,
+  touched: PropTypes.bool
+};
+
+Input.defaultProps = {
+  title: 'inputTitle',
+  valid: false,
+  touched: false
+};
