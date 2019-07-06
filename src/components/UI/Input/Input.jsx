@@ -4,8 +4,20 @@ import React from 'react';
 // Proptypes
 import PropTypes from 'prop-types';
 
-// Styles
-import './Input.css';
+// Styled components
+import styled from 'styled-components';
+
+const Label = styled.label`
+  display: block;
+  font-weight: 700;
+  margin-bottom: 5px;
+`;
+
+const StyledInput = styled.input`
+  width: 50%;
+  padding: 10px; 
+  border: ${props => props.hasError ? '1px solid red' : '1px solid #ccc'}
+`;
 
 export const Input = ( { 
   handleChange, 
@@ -15,29 +27,19 @@ export const Input = ( {
   touched,
    ...props 
   }) => {
-    const formControlClassName = ['form-control'];
-
-    if (touched && !valid) {
-      formControlClassName.push('control-error');
-    }
+    const hasError = touched && !valid;
 
     return (
-      <div className="form-group">
+      <>
+        <Label htmlFor={name}>{title}</Label>
 
-        <label 
-          htmlFor={name} 
-          className="form-label">
-          {title}
-        </label>
-
-        <input 
+        <StyledInput 
           type="text" 
           name={name}
-          className={formControlClassName.join(' ')} 
           onChange={handleChange}
+          hasError={hasError}
           {...props} />
-      
-      </div>
+      </>
     );
 }
 

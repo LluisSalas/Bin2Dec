@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// Styles
-import './Form.css';
-
 // Components
 import { Input } from '../../UI/Input/Input';
 
