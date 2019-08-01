@@ -1,1 +1,1 @@
-Binary-to-Decimal number converter code with React.
+Binary-to-Decimal number converter coded with React.
