@@ -31,9 +31,14 @@ export const Input = ( {
 
     return (
       <>
-        <Label htmlFor={name}>{title}</Label>
+        <Label 
+          data-test="input-label" 
+          htmlFor={name}>
+          {title}
+        </Label>
 
-        <StyledInput 
+        <StyledInput
+          data-test="input-control" 
           type="text" 
           name={name}
           onChange={handleChange}
